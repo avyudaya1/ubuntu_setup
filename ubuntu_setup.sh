@@ -5,7 +5,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 # necessary apt packages
-sudo apt install curl wget neovim git ncdu snapd neofetch fish vlc python3 python3-pip python-is-python3 chrome-gnome-shell gnome-shell-extensions -y
+sudo apt install curl wget neovim git ncdu snapd neofetch fish vlc python3 python3-pip python-is-python3 libreoffice -y
 
 # enable tap to minimize
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -13,6 +13,13 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # git config
 git config --global user.name avyudaya1
 git config --global user.email avyudaya1@gmail.com
+
+# brave
+sudo apt install apt-transport-https curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
 
 # vscode
 sudo apt install software-properties-common apt-transport-https -y
@@ -41,6 +48,7 @@ sudo snap install postman
 sudo snap install spotify
 #sudo snap install android-studio --classic
 sudo snap install skype
+sudo snap install figma-linux
 
 # changing shell
 chsh -s /usr/bin/fish
